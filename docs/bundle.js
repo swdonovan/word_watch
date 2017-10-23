@@ -10411,7 +10411,7 @@ class Word {
 
   static breakDownText(text) {
     let words = new Array
-    words = text.split(' ')
+    words = text.split(/[ ,.]+/)
     let uniqueWords = new Object
 
     return new Promise((resolve, reject) => {
