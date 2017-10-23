@@ -16,8 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $('.text-submission').on('click', 'button', () => {
     text = event.currentTarget.children[1].value
-    debugger;
     Word.breakDownText(text).then((data) => {
+      let counter = 0
+      for (var word in data) {
+        if (data.hasOwnProperty(word)) {
+          $wordCount.append("<p class='unique-word "
+          + data[word] +
+          "' style='font-size: " +
+          data[word] +
+          "em'>"  +
+            word + '(' + data[word] + ')' +
+            "</p>"
+          )
+        }
+      }
     })
   })
 })
