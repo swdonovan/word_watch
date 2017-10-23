@@ -1,7 +1,7 @@
 const $ = require('jquery')
 const Word = require('../lib/model/words')
 const $topWord = $('.top-word')
-const $textSubmission = $('.text-submission')
+const $wordCount = $('.word-count')
 
 document.addEventListener("DOMContentLoaded", () => {
   Word.topWord().then((data) => {
@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     )
   })
 
-  $($textSubmission).on('click', 'button', () => {
+  $('.text-submission').on('click', 'button', () => {
+    text = event.currentTarget.children[1].value
     debugger;
+    Word.breakDownText(text).then((data) => {
+    })
   })
 })
