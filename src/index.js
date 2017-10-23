@@ -32,4 +32,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+
+  $('.text-submission').keypress((event) => {
+    if (event.which == 13) {
+      debugger;
+        text = event.currentTarget.children[1].value
+        Word.breakDownText(text).then((data) => {
+          let counter = 0
+          for (var word in data) {
+            if (data.hasOwnProperty(word)) {
+              $wordCount.append("<p class='unique-word "
+              + data[word] +
+              "' style='font-size: " +
+              data[word] +
+              "em'>"  +
+              word + '(' + data[word] + ')' +
+              "</p>"
+            )
+          }
+        }
+      })
+    }
+  })
 })
