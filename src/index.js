@@ -1,9 +1,10 @@
 const $ = require('jquery')
-const Word = require('../lib/models/words')
+const Word = require('../lib/model/words')
 const $topWord = $('.top-word')
+
 document.addEventListener("DOMContentLoaded", () => {
-  Word.topWord.then((data) => {
+  Word.topWord().then((data) => {
     debugger;
-    #topWord.append('<p> Top Word')
-  }
+    $topWord.append('<h4> Top Word:' + Object.keys(data.word)[0] + '</h4>')
+  })
 })
