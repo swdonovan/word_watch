@@ -10372,7 +10372,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $('.text-submission').keypress((event) => {
     if (event.which == 13) {
-      debugger;
+      ;
         text = event.currentTarget.children[1].value
         Word.breakDownText(text).then((data) => {
           let counter = 0
@@ -10411,7 +10411,7 @@ class Word {
 
   static breakDownText(text) {
     let words = new Array
-    words = text.split(/[ ,.]+/)
+    words = text.split(' ')
     let uniqueWords = new Object
 
     return new Promise((resolve, reject) => {
